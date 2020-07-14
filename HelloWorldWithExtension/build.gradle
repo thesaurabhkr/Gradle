@@ -1,0 +1,29 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'groovy'
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    localGroovy()
+    gradleApi()
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+gradlePlugin {
+    plugins {
+        simplePlugin {
+            id = 'org.example.HelloWorldWithExtension'
+            implementationClass = 'org.example.HelloWorldPlugin'
+        }
+    }
+}
