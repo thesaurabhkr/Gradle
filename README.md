@@ -1,0 +1,1 @@
+This repository contains gradle projects and plugins.
